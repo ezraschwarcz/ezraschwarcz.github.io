@@ -6,21 +6,130 @@
   "location": "Remote, United States",
   "availability": "Booking new projects",
   "headline": "I design, build and ship full-stack products.",
-  "intro": "Web apps, mobile apps and the systems behind them: accounts, databases, admin tools, email, analytics and search. One person accountable from first sketch to launch.",
+  "intro": "Most developers hand you a website. I build the whole product: the part your customers see, and every layer underneath that makes it a business.",
   "services": [
-    { "title": "Web apps", "text": "Fast, search-friendly sites and apps in Next.js and React, built to be found on Google and to load quickly on a phone." },
-    { "title": "iPhone and Android apps", "text": "One codebase for both stores with React Native and Expo, sharing accounts and data with your website." },
-    { "title": "Redesigns", "text": "Take a site that works and make it look and feel like a product people trust, without losing what already ranks." },
-    { "title": "Accounts and data", "text": "Sign-in by email code, Google or passkey. A Postgres database with access rules enforced in the database itself, not just the screen." },
-    { "title": "Admin tools", "text": "A control room so you run the product yourself: content, members, moderation, email and the numbers that matter." },
-    { "title": "Growth plumbing", "text": "Structured data for search, share cards, lifecycle email, attribution and funnels, so you can see what is working." }
+    {
+      "title": "Web apps",
+      "text": "Fast, search-friendly sites and apps in Next.js and React, built to be found on Google and to load quickly on a phone."
+    },
+    {
+      "title": "iPhone and Android apps",
+      "text": "One codebase for both stores with React Native and Expo, sharing accounts and data with your website."
+    },
+    {
+      "title": "Redesigns",
+      "text": "Take a site that works and make it look and feel like a product people trust, without losing what already ranks."
+    },
+    {
+      "title": "Accounts and data",
+      "text": "Sign-in by email code, Google or passkey. A Postgres database with access rules enforced in the database itself, not just the screen."
+    },
+    {
+      "title": "Admin tools",
+      "text": "A control room so you run the product yourself: content, members, moderation, email and the numbers that matter."
+    },
+    {
+      "title": "Growth plumbing",
+      "text": "Structured data for search, share cards, lifecycle email, attribution and funnels, so you can see what is working."
+    }
   ],
   "process": [
-    { "title": "Scope", "text": "A short call and a written plan: what ships first, what waits, what it costs." },
-    { "title": "Build in the open", "text": "You get a live preview link for every change and approve it before it goes live." },
-    { "title": "Launch", "text": "Your domain, your accounts, your code. Everything is in your name from day one." },
-    { "title": "Hand over", "text": "Plain-language docs and an admin screen, so you are never stuck waiting on a developer." }
+    {
+      "title": "Scope",
+      "text": "A short call and a written plan: what ships first, what waits, what it costs."
+    },
+    {
+      "title": "Build in the open",
+      "text": "You get a live preview link for every change and approve it before it goes live."
+    },
+    {
+      "title": "Launch",
+      "text": "Your domain, your accounts, your code. Everything is in your name from day one."
+    },
+    {
+      "title": "Hand over",
+      "text": "Plain-language docs and an admin screen, so you are never stuck waiting on a developer."
+    }
   ],
-  "stack": ["Next.js", "React", "TypeScript", "React Native", "Expo", "Supabase", "Postgres", "Vercel", "Mux", "Resend"],
-  "howIWork": "I work AI-assisted and review everything that ships. That is how a product the size of Tohu Movies goes from redesign to launch in days, not quarters."
+  "stack": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "React Native",
+    "Expo",
+    "Supabase",
+    "Postgres",
+    "Vercel",
+    "Mux",
+    "Resend"
+  ],
+  "howIWork": "I work AI-assisted and review everything that ships. That is how a product the size of Tohu Movies goes from redesign to launch in days, not quarters.",
+  "greeting": "Hello,",
+  "layersCaption": "What your customers see is the top layer. Keep scrolling for the rest.",
+  "layers": [
+    {
+      "label": "Accounts",
+      "chips": [
+        "email code",
+        "Google",
+        "passkey",
+        "profiles"
+      ]
+    },
+    {
+      "label": "Community",
+      "chips": [
+        "comments",
+        "ratings",
+        "reports",
+        "blocks"
+      ]
+    },
+    {
+      "label": "Control room",
+      "chips": [
+        "content",
+        "members",
+        "moderation",
+        "roles"
+      ]
+    },
+    {
+      "label": "Email",
+      "chips": [
+        "sign-in",
+        "weekly pick",
+        "alerts",
+        "unsubscribe"
+      ]
+    },
+    {
+      "label": "Growth",
+      "chips": [
+        "search data",
+        "share cards",
+        "funnels",
+        "attribution"
+      ]
+    },
+    {
+      "label": "Database",
+      "chips": [
+        "Postgres",
+        "access rules",
+        "audit log",
+        "backups"
+      ]
+    }
+  ],
+  "floorLabel": "Tools",
+  "letter": [
+    "The screen above is Tohu Movies, a free streaming service for independent film. I took it from a page that played videos to a full product: a custom player, accounts, a social layer, an admin control room, lifecycle email, search pages for every film and actor, and phone apps on the same backend.",
+    "That is the work I do for clients. Web apps, iPhone and Android apps, and redesigns, with one person accountable from the first sketch to launch. You own every account and every line of code, and you get an admin screen so you are never stuck waiting on a developer."
+  ],
+  "cta": "Start a project",
+  "ps": [
+    "Every change ships to a private preview link first. Nothing goes live until you have seen it.",
+    "I work AI-assisted and review everything that ships. That is how a product the size of Tohu Movies goes from redesign to launch in days, not quarters."
+  ]
 }

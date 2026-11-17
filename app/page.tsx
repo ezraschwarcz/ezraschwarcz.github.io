@@ -1,99 +1,99 @@
 import Link from "next/link";
+import Stack from "@/components/Stack";
 import { getProjects, site } from "@/lib/content";
 
 export default function Home() {
   const projects = getProjects();
+  const lead = projects[0];
   return (
     <>
-      <section className="hero wrap">
-        <p className="status">
-          <span className="status-dot" aria-hidden="true" />
-          {site.availability}
-        </p>
-        <h1>{site.headline}</h1>
-        <p className="lede">{site.intro}</p>
-        <p className="hero-actions">
+      <section className="letter">
+        <p>{site.greeting}</p>
+        <h1>{site.intro}</h1>
+      </section>
+
+      {lead?.cover ? (
+        <Stack
+          image={lead.cover}
+          alt={`${lead.title} screenshot`}
+          layers={site.layers}
+          floorLabel={site.floorLabel}
+          tools={site.stack}
+          caption={site.layersCaption}
+        />
+      ) : null}
+
+      <section className="letter">
+        {site.letter.map((p) => (
+          <p key={p}>{p}</p>
+        ))}
+        <p className="sign">— {site.name}</p>
+        <p>
           <a className="btn" href={`mailto:${site.email}?subject=Project%20inquiry`}>
-            Start a project
+            {site.cta} <span aria-hidden="true">→</span>
           </a>
-          <Link className="btn ghost" href="#work">
-            See the work
-          </Link>
         </p>
-        <ul className="stack" aria-label="Tools I build with">
-          {site.stack.map((s) => (
-            <li key={s}>{s}</li>
+        <div className="ps">
+          {site.ps.map((line, i) => (
+            <p key={line}>
+              <strong>{"P.".repeat(i + 1)}S.</strong> {line}
+            </p>
+          ))}
+        </div>
+      </section>
+
+      <section id="work" className="letter block">
+        <h2 className="mono">work</h2>
+        <ul className="rows">
+          {projects.map((p) => (
+            <li key={p.slug}>
+              <Link href={`/work/${p.slug}`}>
+                <span className="row-title">{p.title}</span>
+                <span className="row-text">{p.summary}</span>
+                <span className="mono row-meta">
+                  {p.kind.toLowerCase()} · {p.year} · read the case study →
+                </span>
+              </Link>
+            </li>
+          ))}
+          <li>
+            <a href={`mailto:${site.email}?subject=Project%20inquiry`}>
+              <span className="row-title muted">Your project</span>
+              <span className="row-text">The next case study could be yours.</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="services" className="letter block">
+        <h2 className="mono">services</h2>
+        <ul className="rows">
+          {site.services.map((s) => (
+            <li key={s.title}>
+              <div>
+                <span className="row-title">{s.title}</span>
+                <span className="row-text">{s.text}</span>
+              </div>
+            </li>
           ))}
         </ul>
       </section>
 
-      <section id="work" className="wrap section">
-        <div className="section-head">
-          <h2>Work</h2>
-          <span className="count">{String(projects.length).padStart(2, "0")}</span>
-        </div>
-        <div className="work">
-          {projects.map((p, i) => (
-            <Link key={p.slug} href={`/work/${p.slug}`} className={`card${i === 0 ? " wide" : ""}`}>
-              <span className="card-shot">
-                {p.cover ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={p.cover} alt={`${p.title} screenshot`} loading={i === 0 ? "eager" : "lazy"} />
-                ) : null}
-              </span>
-              <span className="card-meta">
-                <span className="card-title">{p.title}</span>
-                <span className="card-kind">
-                  {p.kind} · {p.year}
-                </span>
-              </span>
-              <span className="card-summary">{p.summary}</span>
-              <span className="tags">
-                {p.roles.map((r) => (
-                  <span key={r}>{r}</span>
-                ))}
-              </span>
-            </Link>
-          ))}
-          <a className="card next" href={`mailto:${site.email}?subject=Project%20inquiry`}>
-            <span className="next-plus" aria-hidden="true">
-              +
-            </span>
-            <span className="card-title">Your project</span>
-            <span className="card-summary">The next case study could be yours. Tell me what you are building.</span>
-          </a>
-        </div>
-      </section>
-
-      <section id="services" className="wrap section">
-        <div className="section-head">
-          <h2>Services</h2>
-          <span className="count">{String(site.services.length).padStart(2, "0")}</span>
-        </div>
-        <div className="grid3">
-          {site.services.map((s, i) => (
-            <article key={s.title} className="tile">
-              <span className="tile-n">{String(i + 1).padStart(2, "0")}</span>
-              <h3>{s.title}</h3>
-              <p>{s.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="process" className="wrap section">
-        <div className="section-head">
-          <h2>Process</h2>
-        </div>
-        <ol className="steps">
+      <section id="process" className="letter block">
+        <h2 className="mono">process</h2>
+        <ol className="rows numbered">
           {site.process.map((s) => (
             <li key={s.title}>
-              <h3>{s.title}</h3>
-              <p>{s.text}</p>
+              <div>
+                <span className="row-title">{s.title}</span>
+                <span className="row-text">{s.text}</span>
+              </div>
             </li>
           ))}
         </ol>
-        <p className="note">{site.howIWork}</p>
+        <p className="mono avail">
+          <span className="dot" aria-hidden="true" /> {site.availability.toLowerCase()} · {site.location.toLowerCase()}
+        </p>
       </section>
     </>
   );

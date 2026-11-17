@@ -18,29 +18,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip" href="#main">
           Skip to content
         </a>
-        <header className="nav">
-          <Link href="/" className="nav-name">
-            <span className="nav-dot" aria-hidden="true" />
-            {site.name}
+        <header className="site-top">
+          <Link href="/" className="mark" aria-label={`${site.name}, home`}>
+            <span aria-hidden="true">{site.name.split(" ").map((w) => w[0]).join("")}</span>
           </Link>
-          <nav aria-label="Main">
-            <Link href="/#work">Work</Link>
-            <Link href="/#services">Services</Link>
-            <Link href="/#process">Process</Link>
-            <a className="nav-cta" href={`mailto:${site.email}`}>
-              Start a project
-            </a>
-          </nav>
         </header>
         <main id="main">{children}</main>
-        <footer className="foot">
-          <p className="foot-big">
-            Have something to build?{" "}
-            <a href={`mailto:${site.email}?subject=Project%20inquiry`}>{site.email}</a>
-          </p>
-          <p className="foot-small">
-            © {new Date().getFullYear()} {site.name} · {site.location}
-          </p>
+        <footer className="foot mono">
+          <Link href="/#work">work</Link>
+          <Link href="/#services">services</Link>
+          <Link href="/#process">process</Link>
+          <a href={`mailto:${site.email}?subject=Project%20inquiry`}>email</a>
+          <span>
+            © {new Date().getFullYear()} {site.name.toLowerCase()}
+          </span>
         </footer>
       </body>
     </html>

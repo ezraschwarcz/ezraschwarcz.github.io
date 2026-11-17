@@ -24,13 +24,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   if (!p) notFound();
   const [first, ...rest] = p.gallery;
   return (
-    <article className="wrap case">
-      <p className="crumb">
-        <Link href="/#work">← Work</Link>
+    <article className="case">
+      <p className="crumb mono">
+        <Link href="/#work">← work</Link>
       </p>
       <header className="case-head">
-        <p className="card-kind">
-          {p.kind} · {p.year}
+        <p className="mono">
+          {p.kind.toLowerCase()} · {p.year}
         </p>
         <h1>{p.title}</h1>
         <p className="lede">{p.summary}</p>

@@ -9,7 +9,9 @@ folder, so you can update the site without touching code.
 2. Change the text between the quotation marks. Keep the quotation marks and commas.
 3. Click **Commit changes**. Vercel rebuilds the site in about a minute.
 
-`site.json` holds your name, headline, intro, email, services, process steps and the list of tools.
+`site.json` holds your name, the letter on the home page (`intro`, `letter`, `ps`), your email, the layers shown under the screenshot (`layers`), services, process steps and the list of tools (`stack`).
+
+The screenshot that fans out on the home page is the `cover` image of the first project.
 
 ## Add a project
 
@@ -30,7 +32,7 @@ Vercel keeps the last working version live and emails you. Open the file's **His
 
 ## Replace the Tohu screenshots
 
-The images in `public/work/tohu-movies` were captured from a test copy with sample data. To use your own, upload files with the same names.
+The images in `public/work/tohu-movies` were captured from a test copy with sample data and a stand-in profile picture. To use your own, upload files with the same names.
 
 ## Run it on your own computer (optional)
 

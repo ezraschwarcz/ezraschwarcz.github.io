@@ -33,7 +33,7 @@ gallery:
 phone:
   - /work/tohu-movies/m1-browse.jpg
   - /work/tohu-movies/m2-profile.jpg
-  - /work/tohu-movies/m3-sign-in.jpg
+  - /work/tohu-movies/m3-collection.jpg
 ---
 
 ## The brief
