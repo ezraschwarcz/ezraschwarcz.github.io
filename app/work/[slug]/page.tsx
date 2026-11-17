@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import PostEmbed from "@/components/PostEmbed";
 import { getProject, getProjects, site } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -102,7 +103,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <ul>
             {p.posts.map((post) => (
               <li key={post.url}>
-                <a href={post.url} target="_blank" rel="noopener noreferrer">
+                <div className="post-head">
                   {post.date ? <span className="mono">{post.date}</span> : null}
                   <span className="post-title">{post.title}</span>
                   {post.text ? <span className="row-text">{post.text}</span> : null}
@@ -113,7 +114,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                       ))}
                     </span>
                   ) : null}
-                  <span className="post-open">Open the post ↗</span>
+                </div>
+                {/x\.com|twitter\.com/.test(post.url) ? <PostEmbed url={post.url} /> : null}
+                <a className="post-open" href={post.url} target="_blank" rel="noopener noreferrer">
+                  Open the post ↗
                 </a>
               </li>
             ))}

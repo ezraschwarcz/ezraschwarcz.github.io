@@ -3,7 +3,7 @@ title: Exodus
 order: 2
 year: "2025–26"
 kind: Social media
-summary: Posts and media I created for the X account of Exodus, the self-custody crypto wallet. Product launches, partnerships and a New York Stock Exchange milestone.
+summary: Posts and media I created for the X account of Exodus, the self-custody crypto wallet. Product launches and partnerships.
 live: https://x.com/exodus
 liveLabel: See the account on X
 roles: [Social posts, Media]
@@ -17,7 +17,7 @@ facts:
   - label: Likes, XRP Ledger support
     value: "~1.8k"
   - label: Posts shown here
-    value: "6"
+    value: "5"
 postsTitle: Selected posts
 posts:
   - title: Native XRP Ledger and RLUSD support
@@ -30,11 +30,6 @@ posts:
     text: "\"A new era of money is here.\" The launch of Exodus Pay, a self-custody way to pay with regular money and crypto, with video."
     stats: ["~929k views", "~467 likes", "94 reposts", "82 replies"]
     url: https://x.com/exodus/status/1998399782729953363
-  - title: NYSE bell ringing
-    date: Jan 8, 2025
-    text: The $EXOD bell ringing ceremony at the New York Stock Exchange, with a note from the CEO.
-    stats: ["~23k views", "~342 likes", "50 reposts", "27 replies"]
-    url: https://x.com/exodus/status/1876985527322247435
   - title: Card and rewards, in self-custody
     date: Apr 26, 2026
     stats: ["~231 likes"]
@@ -52,7 +47,7 @@ posts:
 
 Announcements only get one first impression. For each of these I wrote the post and made the media that went with it, so the news landed in a single screen: what is new, why it matters, and where to go next.
 
-The posts link out to X, where you can see each one as it ran.
+Each post is shown below as it ran, with its media, straight from X.
 
 ## What I do for clients
 
