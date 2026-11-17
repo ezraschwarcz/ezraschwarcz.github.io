@@ -1,0 +1,26 @@
+{
+  "name": "Ezra Schwarcz",
+  "role": "Full-stack product development",
+  "url": "https://ezraschwarcz.com",
+  "email": "ezraschwarcz@gmail.com",
+  "location": "Remote, United States",
+  "availability": "Booking new projects",
+  "headline": "I design, build and ship full-stack products.",
+  "intro": "Web apps, mobile apps and the systems behind them: accounts, databases, admin tools, email, analytics and search. One person accountable from first sketch to launch.",
+  "services": [
+    { "title": "Web apps", "text": "Fast, search-friendly sites and apps in Next.js and React, built to be found on Google and to load quickly on a phone." },
+    { "title": "iPhone and Android apps", "text": "One codebase for both stores with React Native and Expo, sharing accounts and data with your website." },
+    { "title": "Redesigns", "text": "Take a site that works and make it look and feel like a product people trust, without losing what already ranks." },
+    { "title": "Accounts and data", "text": "Sign-in by email code, Google or passkey. A Postgres database with access rules enforced in the database itself, not just the screen." },
+    { "title": "Admin tools", "text": "A control room so you run the product yourself: content, members, moderation, email and the numbers that matter." },
+    { "title": "Growth plumbing", "text": "Structured data for search, share cards, lifecycle email, attribution and funnels, so you can see what is working." }
+  ],
+  "process": [
+    { "title": "Scope", "text": "A short call and a written plan: what ships first, what waits, what it costs." },
+    { "title": "Build in the open", "text": "You get a live preview link for every change and approve it before it goes live." },
+    { "title": "Launch", "text": "Your domain, your accounts, your code. Everything is in your name from day one." },
+    { "title": "Hand over", "text": "Plain-language docs and an admin screen, so you are never stuck waiting on a developer." }
+  ],
+  "stack": ["Next.js", "React", "TypeScript", "React Native", "Expo", "Supabase", "Postgres", "Vercel", "Mux", "Resend"],
+  "howIWork": "I work AI-assisted and review everything that ships. That is how a product the size of Tohu Movies goes from redesign to launch in days, not quarters."
+}
