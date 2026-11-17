@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import PostEmbed from "@/components/PostEmbed";
 import { getProject, getProjects, site } from "@/lib/content";
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getProjects().map((p) => ({ slug: p.slug }));
 }

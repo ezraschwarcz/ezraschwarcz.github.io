@@ -55,6 +55,16 @@ The images in `public/work/tohu-movies` were captured from a test copy with samp
 
 The "ES" square is three files in the `app` folder: `icon.svg`, `favicon.ico` and `apple-icon.png` (used when someone saves the site to a phone home screen). Replace all three to change it.
 
+## Where the site is hosted
+
+The site is published to **https://ezraschwarcz.github.io** by GitHub Pages. Every time `main` changes, the "Publish to GitHub Pages" workflow (in `.github/workflows/pages.yml`) builds it and puts it live, usually within two minutes. You can watch it in the repo's **Actions** tab; a red X there means the build failed and the previous version stays live.
+
+GitHub only serves that address from a repo named exactly `ezraschwarcz.github.io`, which is why the repo has that name.
+
+Vercel can stay connected too: it still builds a preview for every pull request, which is handy for checking changes before you merge.
+
+If you later buy your own domain, put it in `url` in `site.json` and add it under **Settings → Pages → Custom domain**.
+
 ## Run it on your own computer (optional)
 
 ```
