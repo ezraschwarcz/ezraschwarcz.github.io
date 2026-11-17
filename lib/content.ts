@@ -10,6 +10,19 @@ import site from "@/content/site.json";
 
 export { site };
 
+/** Where the site lives. Set "url" in site.json once you have a domain;
+ *  until then the address Vercel gives the project is used. */
+export function siteUrl(): string {
+  if (site.url) return site.url.replace(/\/$/, "");
+  const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  return vercel ? `https://${vercel}` : "http://localhost:3000";
+}
+
+/** Turns [words](/link) and **bold** in a line of site.json into HTML. */
+export function inline(text: string): string {
+  return marked.parseInline(text, { async: false }) as string;
+}
+
 export type Project = {
   slug: string;
   title: string;
@@ -24,6 +37,10 @@ export type Project = {
   facts: { label: string; value: string }[];
   gallery: { src: string; caption?: string }[];
   phone: string[];
+  posts: { title: string; url: string; date?: string; text?: string; stats: string[] }[];
+  postsTitle: string;
+  liveLabel: string;
+  stackLabel: string;
   html: string;
 };
 
@@ -49,6 +66,20 @@ export function getProjects(): Project[] {
         facts: Array.isArray(data.facts) ? data.facts : [],
         gallery: Array.isArray(data.gallery) ? data.gallery : [],
         phone: Array.isArray(data.phone) ? data.phone.map(String) : [],
+        posts: Array.isArray(data.posts)
+          ? data.posts
+              .filter((x) => x && x.url)
+              .map((x) => ({
+                title: String(x.title ?? "Post"),
+                url: String(x.url),
+                date: x.date ? String(x.date) : undefined,
+                text: x.text ? String(x.text) : undefined,
+                stats: Array.isArray(x.stats) ? x.stats.map(String) : [],
+              }))
+          : [],
+        postsTitle: String(data.postsTitle ?? "Selected posts"),
+        liveLabel: String(data.liveLabel ?? "Visit the live site"),
+        stackLabel: String(data.stackLabel ?? "Stack"),
         html: marked.parse(content, { async: false }) as string,
       };
     })
