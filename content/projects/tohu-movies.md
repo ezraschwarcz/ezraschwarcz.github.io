@@ -81,14 +81,21 @@ Tohu Movies had a catalog of licensed independent films and a basic site that pl
 
 - An iPhone and Android app in one codebase, sharing accounts, watchlists and progress with the website. In pre-release.
 
+### Checked on every change
+
+- 71 automated browser tests click through the site on desktop and phone before any change can go live: public pages, member pages, and every tab of the control room, including accessibility checks.
+- Security scans on every change: for passwords or keys saved by mistake, packages with known problems, and common coding mistakes.
+- The live site is re-checked every week for speed, search basics, accessibility and broken links.
+- All of it uses open-source tools and costs nothing to run.
+
 ## How it is put together
 
 - **Front end:** Next.js on Vercel, server-rendered with cached pages that refresh every minute.
 - **Data:** Postgres on Supabase. Every sensitive action is a database function that checks who is calling, so the rules hold no matter which app is talking to it.
 - **Video:** Mux for adaptive streaming and watch-time data.
 - **Email:** Resend, with a daily job on Vercel's scheduler.
-- **Delivery:** every change ships as a reviewed pull request with a live preview before it reaches the public site.
+- **Delivery:** every change ships as a pull request with a live preview, and has to pass the tests and scans before it reaches the public site.
 
 ## Result
 
-A site that plays films became a product: searchable, social, measurable, and run day to day by its owner from a single screen.
+A site that plays films became a product: searchable, social, measurable, tested on every change, and run day to day by its owner from a single screen.

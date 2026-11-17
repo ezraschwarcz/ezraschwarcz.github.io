@@ -32,6 +32,10 @@
       "text": "Structured data for search, share cards, lifecycle email, attribution and funnels, so you can see what is working."
     },
     {
+      "title": "Quality and security checks",
+      "text": "Every change is tested in real browsers on desktop and phone, and scanned for security mistakes, leaked passwords, vulnerable packages and accessibility problems before it can go live. The live site is re-checked every week for speed, accessibility and broken links, so problems are caught early, not by your customers."
+    },
+    {
       "title": "Social media management",
       "text": "Launch announcements, content calendars, post copy and artwork sized for each platform, and a plain report on what worked."
     }
@@ -116,6 +120,15 @@
       ]
     },
     {
+      "label": "Quality checks",
+      "chips": [
+        "browser tests",
+        "security scans",
+        "accessibility",
+        "speed checks"
+      ]
+    },
+    {
       "label": "Database",
       "chips": [
         "Postgres",
@@ -165,7 +178,13 @@
     "Audit log",
     "GitHub / code",
     "CDN",
-    "Markdown"
+    "Markdown",
+    "Playwright / browser tests",
+    "Semgrep / security scans",
+    "Gitleaks",
+    "OSV-Scanner",
+    "Lighthouse",
+    "pa11y"
   ],
   "stackCta": "See how Tohu Movies was built"
 }
