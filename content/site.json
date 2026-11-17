@@ -1,11 +1,10 @@
 {
   "name": "Ezra Schwarcz",
   "role": "Full-stack product development",
-  "url": "https://ezraschwarcz.com",
+  "url": "",
   "email": "ezraschwarcz@gmail.com",
   "location": "Remote, United States",
   "availability": "Booking new projects",
-  "headline": "I design, build and ship full-stack products.",
   "intro": "Most developers hand you a website. I build the whole product: the part your customers see, and every layer underneath that makes it a business.",
   "services": [
     {
@@ -31,6 +30,10 @@
     {
       "title": "Growth plumbing",
       "text": "Structured data for search, share cards, lifecycle email, attribution and funnels, so you can see what is working."
+    },
+    {
+      "title": "Social media management",
+      "text": "Launch announcements, content calendars, post copy and artwork sized for each platform, and a plain report on what worked."
     }
   ],
   "process": [
@@ -65,7 +68,7 @@
   ],
   "howIWork": "I work AI-assisted and review everything that ships. That is how a product the size of Tohu Movies goes from redesign to launch in days, not quarters.",
   "greeting": "Hello,",
-  "layersCaption": "What your customers see is the top layer. Keep scrolling for the rest.",
+  "layersCaption": "What your customers see is the top layer. Scroll to see what is under it.",
   "layers": [
     {
       "label": "Accounts",
@@ -122,14 +125,47 @@
       ]
     }
   ],
-  "floorLabel": "Tools",
+  "floorLabel": "Infrastructure",
   "letter": [
-    "The screen above is Tohu Movies, a free streaming service for independent film. I took it from a page that played videos to a full product: a custom player, accounts, a social layer, an admin control room, lifecycle email, search pages for every film and actor, and phone apps on the same backend.",
-    "That is the work I do for clients. Web apps, iPhone and Android apps, and redesigns, with one person accountable from the first sketch to launch. You own every account and every line of code, and you get an admin screen so you are never stuck waiting on a developer."
+    "The screen above is [Tohu Movies](/work/tohu-movies), a free streaming service for independent film. I took it from a page that played videos to a full product: a custom player, accounts, a social layer, an admin control room, lifecycle email, search pages for every film and actor, and phone apps on the same backend.",
+    "That is the work I do for clients. Web apps, iPhone and Android apps, redesigns, and the social media that launches them, with one person accountable from the first sketch to launch. You own every account and every line of code, and you get an admin screen so you are never stuck waiting on a developer."
   ],
   "cta": "Start a project",
   "ps": [
     "Every change ships to a private preview link first. Nothing goes live until you have seen it.",
     "I work AI-assisted and review everything that ships. That is how a product the size of Tohu Movies goes from redesign to launch in days, not quarters."
-  ]
+  ],
+  "floor": [
+    "Next.js / web app",
+    "React",
+    "TypeScript",
+    "Postgres / database",
+    "Supabase / accounts and data",
+    "Row-level security",
+    "Vercel / hosting",
+    "Preview deploys",
+    "Edge cache",
+    "React Native",
+    "Expo / phone apps",
+    "Mux / video",
+    "HLS streaming",
+    "Resend / email",
+    "Scheduled jobs",
+    "Passkeys",
+    "Google sign-in",
+    "Email codes",
+    "JSON-LD",
+    "Sitemaps",
+    "Share cards",
+    "Search Console",
+    "Analytics",
+    "AdSense",
+    "Image storage",
+    "Migrations",
+    "Audit log",
+    "GitHub / code",
+    "CDN",
+    "Markdown"
+  ],
+  "stackCta": "See how Tohu Movies was built"
 }

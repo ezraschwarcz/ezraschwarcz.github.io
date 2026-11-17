@@ -23,6 +23,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const p = getProject(slug);
   if (!p) notFound();
   const [first, ...rest] = p.gallery;
+  const others = getProjects().filter((o) => o.slug !== p.slug);
   return (
     <article className="case">
       <p className="crumb mono">
@@ -37,7 +38,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <p className="hero-actions">
           {p.live ? (
             <a className="btn" href={p.live} target="_blank" rel="noopener noreferrer">
-              Visit the live site ↗
+              {p.liveLabel} ↗
             </a>
           ) : null}
           <a className="btn ghost" href={`mailto:${site.email}?subject=Project%20inquiry`}>
@@ -73,7 +74,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <li key={r}>{r}</li>
             ))}
           </ul>
-          <h2>Stack</h2>
+          <h2>{p.stackLabel}</h2>
           <ul>
             {p.stack.map((s) => (
               <li key={s}>{s}</li>
@@ -95,6 +96,31 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </div>
       ) : null}
 
+      {p.posts.length > 0 ? (
+        <section className="posts" aria-labelledby="posts-title">
+          <h2 id="posts-title">{p.postsTitle}</h2>
+          <ul>
+            {p.posts.map((post) => (
+              <li key={post.url}>
+                <a href={post.url} target="_blank" rel="noopener noreferrer">
+                  {post.date ? <span className="mono">{post.date}</span> : null}
+                  <span className="post-title">{post.title}</span>
+                  {post.text ? <span className="row-text">{post.text}</span> : null}
+                  {post.stats.length > 0 ? (
+                    <span className="post-stats">
+                      {post.stats.map((s) => (
+                        <span key={s}>{s}</span>
+                      ))}
+                    </span>
+                  ) : null}
+                  <span className="post-open">Open the post ↗</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       {p.phone.length > 0 ? (
         <div className="phones">
           {p.phone.map((src) => (
@@ -102,6 +128,22 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <img key={src} src={src} alt={`${p.title} on a phone`} loading="lazy" />
           ))}
         </div>
+      ) : null}
+
+      {others.length > 0 ? (
+        <nav className="more" aria-label="More work">
+          <h2 className="mono">more work</h2>
+          <ul className="rows">
+            {others.map((o) => (
+              <li key={o.slug}>
+                <Link href={`/work/${o.slug}`}>
+                  <span className="row-title">{o.title} →</span>
+                  <span className="row-text">{o.summary}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       ) : null}
     </article>
   );

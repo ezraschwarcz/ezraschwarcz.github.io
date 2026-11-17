@@ -5,7 +5,7 @@ year: "2026"
 kind: Streaming platform
 summary: A free, ad-supported streaming service for independent film, with accounts, a social layer, an admin control room and phone apps.
 live: https://www.tohumovies.com
-cover: /work/tohu-movies/01-collection.jpg
+cover: /work/tohu-movies/00-wall.jpg
 roles: [Product design, Web app, Mobile app, Database, Email, SEO]
 stack: [Next.js 16, React 19, TypeScript, Supabase, Postgres, Mux, Resend, Vercel, Expo]
 facts:
@@ -18,6 +18,8 @@ facts:
   - label: Sign-in methods
     value: "4"
 gallery:
+  - src: /work/tohu-movies/00-wall.jpg
+    caption: The library, signed in. Cover art does the selling.
   - src: /work/tohu-movies/01-collection.jpg
     caption: Collections and genre pages, generated from the catalog.
   - src: /work/tohu-movies/02-control-room.jpg

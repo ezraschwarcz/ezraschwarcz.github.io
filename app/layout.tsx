@@ -1,17 +1,28 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import "@fontsource-variable/inter";
 import "./globals.css";
-import { site } from "@/lib/content";
+import { getProjects, site, siteUrl } from "@/lib/content";
+
+const cover = getProjects().find((p) => p.cover)?.cover;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(siteUrl()),
   title: { default: `${site.name} | ${site.role}`, template: `%s | ${site.name}` },
   description: site.intro,
-  openGraph: { title: `${site.name} | ${site.role}`, description: site.intro, type: "website" },
+  openGraph: {
+    title: `${site.name} | ${site.role}`,
+    description: site.intro,
+    type: "website",
+    images: cover ? [cover] : [],
+  },
+  twitter: { card: "summary_large_image" },
 };
 
+export const viewport: Viewport = { themeColor: "#f2efe7" };
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const mail = `mailto:${site.email}?subject=Project%20inquiry`;
   return (
     <html lang="en">
       <body>
@@ -20,18 +31,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <header className="site-top">
           <Link href="/" className="mark" aria-label={`${site.name}, home`}>
-            <span aria-hidden="true">{site.name.split(" ").map((w) => w[0]).join("")}</span>
+            <span aria-hidden="true">
+              {site.name
+                .split(" ")
+                .map((w) => w[0])
+                .join("")}
+            </span>
           </Link>
         </header>
         <main id="main">{children}</main>
         <footer className="foot mono">
-          <Link href="/#work">work</Link>
-          <Link href="/#services">services</Link>
-          <Link href="/#process">process</Link>
-          <a href={`mailto:${site.email}?subject=Project%20inquiry`}>email</a>
-          <span>
+          <nav aria-label="Footer">
+            <Link href="/#work">work</Link>
+            <Link href="/#services">services</Link>
+            <Link href="/#process">process</Link>
+            <a href={mail}>email</a>
+          </nav>
+          <p>
             © {new Date().getFullYear()} {site.name.toLowerCase()}
-          </span>
+          </p>
         </footer>
       </body>
     </html>
